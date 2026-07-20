@@ -3,249 +3,198 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NAVJOT TRADER (SEBI REGISTERED)</title>
+    <title>NAVJOT TRADER (SEBI REGISTERED) - Trading Signals</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
         body {
-            background-color: #0b0f12;
-            background-image: radial-gradient(circle at top, rgba(34, 197, 94, 0.15) 0%, transparent 60%);
+            background-color: #0d1b2a;
             color: #ffffff;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 20px;
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            padding: 20px;
         }
-
         .container {
+            background-color: #1b263b;
+            border-radius: 15px;
+            padding: 30px 20px;
+            max-width: 400px;
             width: 100%;
-            max-width: 480px;
-            background: rgba(18, 26, 33, 0.8);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(10px);
-            border-radius: 24px;
-            padding: 30px 24px;
             text-align: center;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
         }
-
-        /* Profile Section */
         .profile-img {
-            width: 110px;
-            height: 110px;
+            width: 120px;
+            height: 120px;
             border-radius: 50%;
-            border: 3px solid #22c55e;
+            border: 4px solid #ffcc00;
             object-fit: cover;
             margin-bottom: 15px;
-            box-shadow: 0 0 20px rgba(34, 197, 94, 0.3);
         }
-
         h1 {
+            color: #ffcc00;
             font-size: 24px;
-            font-weight: 700;
-            letter-spacing: 0.5px;
-            margin-bottom: 5px;
+            margin: 5px 0;
             text-transform: uppercase;
-        }
-
-        .subtitle {
-            color: #22c55e;
-            font-size: 20px;
-            font-weight: 800;
             letter-spacing: 1px;
-            margin-bottom: 20px;
         }
-
-        /* Highlight List */
-        .highlights {
-            list-style: none;
-            margin-bottom: 25px;
-        }
-
-        .highlights li {
-            font-size: 14px;
-            color: #b3b9c1;
-            margin-bottom: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-        }
-
-        /* Main CTA Button */
-        .cta-btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            width: 100%;
-            background: #22c55e;
-            color: #0b0f12;
-            text-decoration: none;
-            padding: 16px;
-            border-radius: 14px;
-            font-weight: 700;
+        .subtitle {
             font-size: 16px;
-            letter-spacing: 0.5px;
-            margin-bottom: 30px;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(34, 197, 94, 0.4);
+            font-weight: bold;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
         }
-
-        .cta-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(34, 197, 94, 0.6);
-            background: #16a34a;
-        }
-
-        /* Features Checklist */
-        .features {
-            text-align: left;
-            margin-bottom: 30px;
-            background: rgba(255, 255, 255, 0.02);
-            padding: 20px;
-            border-radius: 16px;
-            border: 1px solid rgba(255, 255, 255, 0.03);
-        }
-
-        .feature-item {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            margin-bottom: 15px;
-            font-size: 15px;
-            color: #e2e8f0;
-            font-weight: 500;
-        }
-
-        .feature-item:last-child {
-            margin-bottom: 0;
-        }
-
-        .check-icon {
-            color: #22c55e;
-            background: rgba(34, 197, 94, 0.15);
-            padding: 4px;
-            border-radius: 6px;
-            font-size: 12px;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        /* Stats Grid */
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 12px;
+        .tagline {
+            color: #a0aec0;
+            font-size: 14px;
             margin-bottom: 25px;
         }
-
-        .stat-card {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(34, 197, 94, 0.1);
-            padding: 12px 5px;
-            border-radius: 12px;
-            transition: border-color 0.3s ease;
-        }
-
-        .stat-card:hover {
-            border-color: rgba(34, 197, 94, 0.4);
-        }
-
-        .stat-number {
-            font-size: 18px;
-            font-weight: 700;
-            color: #22c55e;
-            margin-bottom: 4px;
-        }
-
-        .stat-label {
-            font-size: 11px;
-            color: #94a3b8;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        /* Footer Element */
-        .footer-shape {
-            display: inline-block;
-            width: 80px;
-            height: 14px;
-            border: 2px solid rgba(34, 197, 94, 0.5);
+        
+        /* Signal Button Style */
+        .btn {
+            display: block;
+            background-color: #22c55e;
+            color: #000000;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 15px;
             border-radius: 10px;
-            opacity: 0.7;
+            margin: 15px 0;
+            font-size: 16px;
+            text-transform: uppercase;
+            cursor: pointer;
+            border: none;
+            width: 100%;
+            transition: all 0.3s ease;
+        }
+        .btn:hover {
+            background-color: #16a34a;
+        }
+        
+        /* Signal Loading State */
+        .btn.loading {
+            background-color: #eab308 !important;
+            color: #000000;
+            animation: pulse 1s infinite alternate;
+        }
+
+        @keyframes pulse {
+            0% { opacity: 0.7; }
+            100% { opacity: 1; }
+        }
+
+        .badge-box {
+            background-color: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 12px;
+            margin-bottom: 20px;
+            font-size: 14px;
+            color: #e2e8f0;
+        }
+        .features-list {
+            text-align: left;
+            margin: 20px 0;
+            padding: 0 10px;
+            list-style: none;
+        }
+        .features-list li {
+            margin-bottom: 12px;
+            font-size: 15px;
+            display: flex;
+            align-items: center;
+        }
+        .features-list li::before {
+            content: "✓";
+            color: #ffffff;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        .notice {
+            color: #ffcc00;
+            font-size: 14px;
+            margin: 15px 0 5px 0;
+        }
+        .sub-text {
+            color: #a0aec0;
+            font-size: 12px;
+            margin-bottom: 5px;
+        }
+        .risk-disclaimer {
+            color: #718096;
+            font-size: 11px;
+            margin-top: 15px;
+        }
+        footer {
+            margin-top: 30px;
+            font-size: 13px;
+            color: #718096;
+        }
+        footer a {
+            color: #3b82f6;
+            text-decoration: underline;
         }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <!-- Profile Pic -->
-        <!-- Apni photo ka path 'profile.jpg' ki jagah dalein -->
-        <img class="profile-img" src="https://i.ibb.co/jF8tFb4/OWNg-RR1hn7mn-Em16-UJc-RJLh-G5-Js-I27-XS-EMtwf-Jzj-AK7t-O3g6-H-rbsn3-Uaf9-Nsb2r0-qc-Vj-LOD43c74-gio-QG8-Sjp.jpg" alt="Pankaj Bhardwaj">
+<div class="container">
+    <!-- Profile Image -->
+    <img src="https://i.ibb.co/KcZW1fBM/Uj4m-Oneh2i-NGe-UE4-IMRA8d-Qz-Hn-Vclt-Dgx8xc2-bb-Lxg-A0-Epc-IHq74i-IGwqi-QWS3-YQyowu-Ewy-ERTXo-VGquvf6.jpg" alt="Pankaj Bhardwaj" class="profile-img">
 
-        <!-- Header -->
-        <h1>NAVJOT TRADER </h1>
-        <div class="subtitle">(SEBI REGISTERED)</div>
+    <h1>NAVJOT TRADER (SEBI REGISTERED)</h1>
+    <div class="subtitle">NIFTY • BANKNIFTY • OPTIONS</div>
+    <div class="tagline">Daily Intraday Trading Signals & Analysis</div>
 
-        <!-- Highlights -->
-        <ul class="highlights">
-            <li>📈 Daily Market Updates</li>
-            <li>🔥 NIFTY • BANKNIFTY Analysis</li>
-            <li>💰 Smart Trading Community</li>
-        </ul>
+    <!-- Single Telegram Button with Signal Effect -->
+    <button class="btn" onclick="connectSignal(this, 'https://t.me/+QzwGuUJ7pOhjN2I1')">Join Now For Free Telegram</button>
 
-        <!-- CTA Button (Apna telegram link href mein dalein) -->
-        <a href="https://t.me/+QzwGuUJ7pOhjN2I1" class="cta-btn" target="_blank">
-            🚀 JOIN TELEGRAM NOW
-        </a>
-
-        <!-- Features -->
-        <div class="features">
-            <div class="feature-item">
-                <span class="check-icon">✓</span>
-                <span>Daily Trading Signals</span>
-            </div>
-            <div class="feature-item">
-                <span class="check-icon">✓</span>
-                <span>Market Learning & Analysis</span>
-            </div>
-            <div class="feature-item">
-                <span class="check-icon">✓</span>
-                <span>Live Trading Updates</span>
-            </div>
-            <div class="feature-item">
-                <span class="check-icon">✓</span>
-                <span>Beginner Friendly Community</span>
-            </div>
-        </div>
-
-        <!-- Stats -->
-        <div class="stats-grid">
-            <div class="stat-card">
-                <div class="stat-number">50K+</div>
-                <div class="stat-label">Members</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-number">24/7</div>
-                <div class="stat-label">Updates</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-number">95%</div>
-                <div class="stat-label">Analysis</div>
-            </div>
-        </div>
-
-        <!-- Footer Shape -->
-        <div class="footer-shape"></div>
+    <!-- Trusted Badge -->
+    <div class="badge-box">
+        <div>✓ Trusted by 5,000+ Traders</div>
+        <div style="margin-top: 5px;">✓ Daily Consistent Setups</div>
     </div>
+
+    <!-- Features List -->
+    <ul class="features-list">
+        <li>5-7 High Probability Trades</li>
+        <li>Exact Entry, SL & Target</li>
+        <li>Beginner Friendly Guidance</li>
+        <li>Live Market Updates</li>
+    </ul>
+
+    <div class="notice">⏳ Free Access Closing Soon</div>
+    <div class="sub-text">📊 Limited Seats • Active Community</div>
+    <div class="risk-disclaimer">⚠️ Market investments are subject to risk</div>
+
+    <!-- Footer Section with 'AI ADS AGENCY' -->
+    <footer>
+        Powered by <a href="https://t.me/+mqNI-rk7y284M2Fl">AI ADS AGENCY</a>
+    </footer>
+</div>
+
+<script>
+    // Signal Check Function
+    function connectSignal(button, url) {
+        button.innerText = "📡 CONNECTING SIGNAL...";
+        button.classList.add('loading');
+        button.disabled = true;
+
+        setTimeout(function() {
+            button.innerText = "✅ SIGNAL CONNECTED!";
+            window.location.href = url;
+            
+            setTimeout(function() {
+                button.innerText = "Join Now For Free Telegram";
+                button.classList.remove('loading');
+                button.disabled = false;
+            }, 2000);
+            
+        }, 1500); 
+    }
+</script>
 <!-- Meta Pixel Code -->
 <script>
 !function(f,b,e,v,n,t,s)
